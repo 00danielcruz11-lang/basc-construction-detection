@@ -87,6 +87,19 @@ analysis of Landsat and Sentinel-2 data"*, Science of Remote Sensing, May 2024
 (<https://www.sciencedirect.com/science/article/pii/S2666017224000221>), applied to
 Aterio's data-centre sites on Sentinel-2.
 
+## Simplified algorithms
+
+`simplified_algorithms/` contains compact, dependency-light versions of the two
+algorithm families currently on this machine:
+
+- `construction_start.py` — the ACD/BASC construction-start decision core:
+  Sentinel-2 NDBI/SWIR deltas plus causal provisional/confirmed onset logic.
+- `thermal_anomaly.py` — the Landsat thermal anomaly core: same-day
+  leave-one-out campus median anomalies plus a sustained step-change scan.
+
+Those files are meant for inspection and reuse. They do not fetch imagery or carry
+credentials, raw data, chips, dashboards, or proprietary inventory joins.
+
 ## What runs
 
 | file | does |
